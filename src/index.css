@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;700&display=swap');
+
+
+
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: #1f1f1f;
+  color: #fff;
 }
