@@ -9,7 +9,8 @@ import MobileNav from '../components/Navbar/MobileNav'
 
 export default function Main() {
   return (
-    <div className="max-w-[1440px]  justify-between flex gap-10 mt-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-[1440px] relative justify-between flex 
+    gap-10 mt-10 mx-auto px-4 sm:px-6 lg:px-8">
       <Suspense fallback={<Loader />}>
         <div className="w-[365px] lg:block hidden">
           <Profile />
@@ -21,7 +22,7 @@ export default function Main() {
         <div className="lg:max-w-[60px] lg:block md:block hidden">
           <Navbar />
         </div>
-        <div className="lg:hidden md:hidden block">
+        <div className="lg:hidden md:hidden visiable">
           <MobileNav />
         </div>
       </Suspense>
