@@ -1,7 +1,7 @@
-import React from 'react'
-import profile from '../../assets/images/gmshuvo.jpeg'
+import React from "react";
+import profile from "../../assets/images/gmshuvo.jpeg";
 
-import SocialLinks from '../SocialLinks/SocialLinks'
+import SocialLinks from "../../components/SocialLinks/SocialLinks";
 
 export default function Profile() {
   return (
