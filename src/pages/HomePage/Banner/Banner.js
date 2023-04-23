@@ -12,7 +12,7 @@ export default function Banner() {
           >
             2+
           </span>
-          <p className="uppercase lg:text-2xl md:text-2xl text-md text-accent">
+          <p className="uppercase lg:text-2xl md:text-2xl text-md text-accent -mt-2">
             Years of <br />
             <span>Expriences</span>
           </p>
@@ -26,20 +26,20 @@ export default function Banner() {
           >
             10+
           </span>
-          <p className=" uppercase lg:text-2xl md:text-2xl text-md text-accent">
+          <p className=" uppercase lg:text-2xl md:text-2xl text-md text-accent -mt-2">
             Projects <br />
             <span>completed</span>
           </p>
         </div>
       </div>
-      <a href="#projects" className="flex items-center gap-2 text-2xl">
+      <a href="#projects" className="flex items-center  gap-2 md:text-2xl text-md md:mt-0 mt-[40px]">
         My Projects
         <lord-icon
           target="div"
           src="https://cdn.lordicon.com/rxufjlal.json"
           trigger="loop"
           class="current-color"
-          style={{ width: "40px", height: "40px" }}
+          style={{ width: "30px", height: "30px" }}
         ></lord-icon>
       </a>
     </div>

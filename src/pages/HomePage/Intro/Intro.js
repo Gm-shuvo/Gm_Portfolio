@@ -1,12 +1,14 @@
 import React from 'react'
 import SelectionTitle from '../../../components/utils/SectionTitle'
+import Banner from "../Banner/Banner";
+
 export default function Intro() {
   const props = {
     icon: "https://cdn.lordicon.com/osuxyevn.json",
     title: "Introduction",
   };
   return (
-    <section className="w-full" id="home">
+    <section className="w-full mb-16" id="home">
       <SelectionTitle props={props} />
       <div className="">
         <h1 className="lg:text-[65px] lg:leading-[75px] md:trext-[50px] md:leading-[60px] text-[28px] leading-[40px]">
@@ -17,7 +19,7 @@ export default function Intro() {
           I am a MERN Stack developer who loves to create dynamic and responsive
           web applications.
         </p>
-        
+        <Banner />
       </div>
     </section>
   );
