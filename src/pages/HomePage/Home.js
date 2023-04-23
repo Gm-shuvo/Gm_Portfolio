@@ -1,5 +1,5 @@
 import Projects from '../Projects/Projects'
-import About from './About/About'
+import About from './AboutMe/AboutMe'
 import ContractMe from './ContractMe/ContractMe'
 import Services from './Services/Services'
 import Skills from './Skills/Skills'
