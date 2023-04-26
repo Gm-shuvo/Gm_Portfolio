@@ -1,12 +1,12 @@
 .project-card {
     position: relative;
+
 }
 
 .project-card-content {
     position: absolute;
     display: none;
-    
-    z-index: 2;
+    z-index: 5;
     top: 0;
     left: 0;
     right: 0;
@@ -40,7 +40,7 @@
 
 .project-card:hover .overlay {
     display: block;
-    background-color: rgb(46, 46, 46);
+    background-color: rgb(37, 37, 37);
     opacity: .95;
     position: absolute;
     border-radius: 20px;
@@ -48,6 +48,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: -1;
     animation-name: hover-animation;
     animation-duration: 0.3s;
 }

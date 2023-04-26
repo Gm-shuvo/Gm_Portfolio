@@ -24,6 +24,7 @@ export default function SkillCard({ skill, index }) {
               "
                 data-aos='fade-up'
                 data-aos-delay={`${(index % 6) * 100 + 100}`}
+                key={index}
               >
                 <SkillSetCard key={index} icon={icon} name={name} />
               </div>
