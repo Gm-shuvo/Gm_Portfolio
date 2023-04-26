@@ -1,16 +1,25 @@
 import React from 'react'
 import { RxExternalLink } from 'react-icons/rx'
+import { MdOutlineCalendarToday, MdOutlineFeaturedPlayList } from "react-icons/md";
+import { HiCode } from "react-icons/hi";
+import { getRandomColor } from './RandomColor'
+import { AiFillGithub } from "react-icons/ai";
+import { CiServer } from "react-icons/ci";
+import {BsCamera} from 'react-icons/bs'
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 export default function ProjectModal({
   data, setModal
 }) {
   const { name, liveLink, description, features, duration, technologies, iveLink, client, server, images } = data;
-  console.log(data)
+  console.log(getRandomColor())
   return (
     <div>
       <input type="checkbox" id="project-modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box 
-        w-11/12 max-w-5xl relative">
+        <div
+          className="modal-box 
+        w-11/12 max-w-5xl relative"
+        >
           <label
             htmlFor="project-modal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
@@ -18,16 +27,127 @@ export default function ProjectModal({
             ✕
           </label>
           {/* Projects Contents */}
-          <div className="flex justify-between lg:pr-8 pr-3">
-            <h3 text-3xl text-bold text-primary>hiii</h3>
-            <a href={liveLink}>
-              <button className="btn btn-sm rounded-full px-5 btn-primary text-sm flex items-center gap-1">
-                <RxExternalLink />
-                Demo
-              </button>
-            </a>
+          <div className="">
+            <div className="flex justify-between lg:pr-8 pr-6">
+              <h3 className="text-3xl text-bold text-primary">{name}</h3>
+              <a href={" "}>
+                <button className="btn btn-sm rounded-full px-5 btn-primary text-sm flex items-center gap-1">
+                  <RxExternalLink />
+                  LiveLink
+                </button>
+              </a>
+            </div>
+            {/* Description */}
+            <p className="pt-3 mb-8 text-accent text-xl">{description}</p>
+            {/* // */}
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+              {/* Features */}
+              <div className="">
+                <h2 className="text-xl flex items-center gap-2">
+                  <MdOutlineFeaturedPlayList />
+                  Features
+                </h2>
+                <div className="mt-5">
+                  <ul className="text-accent">
+                    {features?.map((feature, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start justify-start gap-2"
+                      >
+                        <span className="h-4 w-4 ">
+                          <lord-icon
+                            target="li"
+                            src="https://cdn.lordicon.com/yqzmiobz.json"
+                            trigger="hover"
+                            colors="primary:#16c79e"
+                            style={{ width: "16px", height: "16px" }}
+                          ></lord-icon>
+                        </span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/* Duration */}
+                <div className="mt-5 grid gap-1">
+                  <h2 className="flex items-center gap-2 text-xl text-bold">
+                    <MdOutlineCalendarToday />
+                    Duration of Project
+                  </h2>
+                  <p className="text-accent text:xm mt-3">{duration}</p>
+                </div>
+              </div>
+              {/* Technologies */}
+              <div className="">
+                <div className="">
+                  <h2 className="flex items-center gap-2 text-xl text-bold">
+                    <HiCode />
+                    Technologies
+                  </h2>
+                  <div className="flex flex-wrap gap-2 text-base-100 mt-5">
+                    {technologies?.map((tech, index) => {
+                      return (
+                        <span
+                          key={index}
+                          className={`py-2 px-4 text-sm bg-[#766979] text-white rounded-full`}
+                        >
+                          {tech}
+                        </span>
+                      );
+                    })}
+                  </div>
+                  <div className="mt-5">
+                    <h2 className="flex items-center gap-2 text-xl text-bold
+                    
+                    ">
+                      <AiFillGithub />
+                      Source Code
+                    </h2>
+                    <div className="mt-3">
+                      <div className="flex justify-between gap-4">
+                        <a
+                          href={" "}
+                          className="flex items-center gap-2 text-primary"
+                        >
+                          <AiFillGithub />
+                          Client Side
+                        </a>
+                        <a
+                          href={" "}
+                          className="flex items-center gap-2 text-red-300"
+                        >
+                          <CiServer />
+                          Server Side
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Images */}
+              <div className="">
+                <h2 className='flex items-center gap-2 text-xl'>
+                  <BsCamera />
+                  Images
+                </h2>
+                <PhotoProvider>
+                  <div className="flex flex-wrap gap-3 mt-3">
+                    {images?.map((image, index) => {
+                      return (
+                        <PhotoView key={index} src={image} >
+                          <img src={image} alt="" className="w-full h-42 object-contain
+                          hover:scale-105
+                          transition-all duration-300
+                          cursor-pointer
+                          rounded-md" />
+                        </PhotoView>
+                      )
+                     })}
+                  </div>
+               </PhotoProvider>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
