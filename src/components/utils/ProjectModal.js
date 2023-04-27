@@ -7,11 +7,14 @@ import { AiFillGithub } from "react-icons/ai";
 import { CiServer } from "react-icons/ci";
 import {BsCamera} from 'react-icons/bs'
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+// import { color, textColor } from './RandomColor'
+// import { color, textColor } from './RandomColor'
+
 export default function ProjectModal({
   data, setModal
 }) {
   const { name, liveLink, description, features, duration, technologies, iveLink, client, server, images } = data;
-  console.log(getRandomColor())
+  // console.log(getRandomColor())
   return (
     <div>
       <input type="checkbox" id="project-modal" className="modal-toggle" />
@@ -27,8 +30,9 @@ export default function ProjectModal({
             ✕
           </label>
           {/* Projects Contents */}
-          <div className="">
-            <div className="flex justify-between lg:pr-8 pr-6">
+          <div className="mt-5 lg:mt-0">
+            <div className="flex justify-between lg:pr-8 pr-6.
+            ">
               <h3 className="text-3xl text-bold text-primary">{name}</h3>
               <a href={" "}>
                 <button className="btn btn-sm rounded-full px-5 btn-primary text-sm flex items-center gap-1">
@@ -85,11 +89,25 @@ export default function ProjectModal({
                     Technologies
                   </h2>
                   <div className="flex flex-wrap gap-2 text-base-100 mt-5">
-                    {technologies?.map((tech, index) => {
+                    {technologies?.map((tech, index) => { 
+                      // generate a random color
+                      const color =
+                        "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+                      // determine the brightness of the color using the HSP color model
+                      const hsp = Math.sqrt(
+                        0.299 * parseInt(color.substring(1, 3), 16) ** 2 +
+                          0.587 * parseInt(color.substring(3, 5), 16) ** 2 +
+                          0.114 * parseInt(color.substring(5, 7), 16) ** 2
+                      );
+
+                      // generate a contrasting color for the text
+                      const textColor = hsp > 127.5 ? "#000000" : "#ffffff";
                       return (
                         <span
                           key={index}
-                          className={`py-2 px-4 text-sm bg-[#766979] text-white rounded-full`}
+                          className={`py-2 px-4 text-sm text-white rounded-full`}
+                          style={{ backgroundColor: color, color: textColor}}
                         >
                           {tech}
                         </span>
