@@ -23,7 +23,7 @@ export default function Main() {
         <div className="lg:max-w-[60px] lg:block md:block hidden">
           <Navbar />
         </div>
-        <div className="lg:hidden md:hidden block fixed bottom-3 left-10 right-10">
+        <div className="md:hidden block fixed bottom-3 left-10 right-10">
           <MobileNav />
         </div>
       </Suspense>

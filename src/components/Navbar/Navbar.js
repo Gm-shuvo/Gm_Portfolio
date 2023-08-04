@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { LoaderIcon } from 'react-hot-toast';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
@@ -8,7 +7,7 @@ export default function Navbar() {
   console.log(location);
   const path = location?.pathname?.split('/')[1];
   console.log(path);
-  const { user, login, logout, isLoading } = useContext(AuthContext);
+  // const { user, login, logout, isLoading } = useContext(AuthContext);
   
   const navItem = [
     {
@@ -38,7 +37,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="flex flex-col gap-4 sticky top-16">
+    <div className="flex flex-col gap-6 fixed top-[77px] right-4">
       {/* Nav for blogs/resource/deshboard/projects  */}
       {(path === "blogs" ||
         path === "resource" ||

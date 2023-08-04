@@ -16,6 +16,7 @@ export default function Projects() {
           icon: "https://cdn.lordicon.com/svbmmyue.json",
           title: "Projects",
         }}
+        key={1}
       />
       <SectionHeader>
         My <span className="text-primary">Projects</span>

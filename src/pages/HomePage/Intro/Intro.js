@@ -11,8 +11,8 @@ export default function Intro() {
     <section className="w-full mb-16" id="home">
       <SelectionTitle props={props} />
       <div className="">
-        <h1 className="lg:text-[65px] lg:leading-[75px] md:trext-[50px] md:leading-[60px] text-[28px] leading-[40px]">
-          Hey, I'm <span className="text-primary">Shuvo</span>
+        <h1 className="lg:text-[65px] lg:leading-[75px] md:text-[50px] md:leading-[60px] text-[28px] leading-[40px]">
+          Hey, I'm <span className="text-primary">Gm Shuvo</span>
           <br /> Full Stack Developer
         </h1>
         <p className="mt-6 lg:text-2xl md:text-2xl text-md text-accent">
