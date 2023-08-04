@@ -8,7 +8,7 @@ import useTitle from '../../components/hook/useTitle'
 export default function Home() {
   useTitle('Portfolio')
   return (
-    <div>
+    <div className='px-10'>
       <Intro/>
       <About />
       <Services />

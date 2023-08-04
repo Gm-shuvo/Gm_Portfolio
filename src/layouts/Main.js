@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import Profile from "../pages/Profile/Profile";
 import MobileNav from "../components/Navbar/MobileNav";
+import ScrollToTop from "../components/utils/ScrollToTop";
 
 export default function Main() {
   return (
@@ -26,6 +27,7 @@ export default function Main() {
         <div className="md:hidden block fixed bottom-3 left-10 right-10">
           <MobileNav />
         </div>
+        <ScrollToTop />
       </Suspense>
     </div>
   );

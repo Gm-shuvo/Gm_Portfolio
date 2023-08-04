@@ -10,7 +10,7 @@ export default function MobileNav() {
     },
     {
       name: "Projects",
-      path: "/projects",
+      path: "/my_projects",
       icon: "https://cdn.lordicon.com/fpmskzsv.json",
     },
     {
@@ -19,29 +19,28 @@ export default function MobileNav() {
       icon: "https://cdn.lordicon.com/vufjamqa.json",
     },
     {
-      name: "Resume",
-      path: "/resume",
-      icon: "https://cdn.lordicon.com/iiixgoqp.json",
+      name: "Contact",
+      path: "/contact",
+      icon: "https://cdn.lordicon.com/diihvcfp.json",
     },
   ];
   return (
-    <div className="flex items-center justify-around gap-8 border-[1px] px-9 py-3 rounded-full border-[#b6b0b0] bg-slate-300/10">
+    <div className="flex items-center justify-around gap-8 border-[1px] px-9 py-2 rounded-full border-[#b6b0b0] bg-slate-400/10">
       {mobNav.map((item, index) => {
         return (
           <Link
             to={item.path}
             key={index}
-            data-title={item.name}
-            className="icon flex flex-col items-center gap-1"
+            className="flex flex-col items-center gap-1 hover:text-[#00f396] cursor-pointer"
           >
             <lord-icon
               src={item.icon}
               trigger="hover"
               class="current-color"
-              style={{ width: "24px", height: "24px", paddingTop: "2px" }}
+              style={{ width: "24px", height: "24px" }}
               className=''
             ></lord-icon>
-            <span className="text-xs">{item.name}</span>
+            <span className="text-md">{item.name}</span>
           </Link>
         );
       })}

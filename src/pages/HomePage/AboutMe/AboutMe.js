@@ -1,32 +1,13 @@
 import SelectionTitle from "../../../components/utils/SectionTitle";
 import SectionHeader from "../../../components/utils/SectionHeader";
-import { Link } from "react-router-dom";
-
+import { handleDownload } from "../../../components/utils/ResumeDownload";
 export default function About() {
   const props = {
     icon: "https://cdn.lordicon.com/bhfjfgqz.json",
     title: "About Me",
   };
 
-  const handleDownload = async () => {
-    const cvUrl = "https://res.cloudinary.com/gmshuvo/image/upload/v1691131846/Gm_Shuvo_Resume_tsmthm.pdf";
-    const Name = "Gm_Shuvo";
-    try {
-      const response = await fetch(cvUrl);
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `${Name}_cv.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.log("Error in downloading CV:", error);
-    }
-
-  }
+  
 
   return (
     <section id="about" className="mb-16">

@@ -17,7 +17,7 @@ export const routes = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/projects',
+        path: '/my_projects',
         element: <Projects />
       }
     ]

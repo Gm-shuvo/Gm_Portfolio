@@ -114,7 +114,7 @@ export default function ProjectModal({
                       );
                     })}
                   </div>
-                  <div className="mt-5">
+                  <div className="mt-5 grid">
                     <h2 className="flex items-center gap-2 text-xl text-bold
                     
                     ">
@@ -122,7 +122,7 @@ export default function ProjectModal({
                       Source Code
                     </h2>
                     <div className="mt-3">
-                      <div className="flex justify-between gap-4">
+                      <div className="flex items-start justify-between gap-4">
                         <a
                           href={" "}
                           className="flex items-center gap-2 text-primary"

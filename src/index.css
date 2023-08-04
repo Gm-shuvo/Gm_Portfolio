@@ -17,3 +17,34 @@ body {
   display: none;
 }
 
+/* customizing tooltip */
+.icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.icon::before {
+  content: attr(data-title);
+  position: absolute;
+  right: 50%;
+  
+
+  transform: translateX(-50%);
+  background-color: rgba(45, 45, 45, 0.8);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.icon:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+

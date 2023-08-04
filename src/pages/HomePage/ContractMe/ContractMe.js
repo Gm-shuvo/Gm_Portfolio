@@ -1,40 +1,58 @@
-import React, { useRef } from 'react'
-import SectionHeader from '../../../components/utils/SectionHeader'
-import SectionTitle from '../../../components/utils/SectionTitle'
-
-import emailjs from '@emailjs/browser';
-import toast from 'react-hot-toast';
-
+import { useRef } from "react";
+import SectionHeader from "../../../components/utils/SectionHeader";
+import SectionTitle from "../../../components/utils/SectionTitle";
+// import dotenv from "dotenv";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
+// dotenv.config
 export default function ContractMe() {
-  const formData = useRef(null)
+  const formData = useRef(null);
+  const toastStyle = {
+    style: {
+      borderRadius: "10px",
+      background: "#333",
+      color: "#fff",
+    },
+  };
+
+  const ServiceId = process.env.REACT_APP_EMAIL_SERVICE_ID;
+  const TemplateId = process.env.REACT_APP_EMAIL_TEMPLATE_ID;
+  const UserId = process.env.REACT_APP_EMAIL_USER_ID;
+  // console.log("🚀 ~ file: ContractMe.js:19 ~ ContractMe ~ ServiceId:", ServiceId)
+
 
   const handleForm = (e) => {
     e.preventDefault(); // Prevents default refresh by the browser
-  
-    const data = new FormData(formData.current)
-    const formJSON = Object.fromEntries(data.entries())
-    console.log(formJSON)
-    const {User_name, User_email, User_message} = formJSON
+
+    const data = new FormData(formData.current);
+    const formJSON = Object.fromEntries(data.entries());
+    console.log(formJSON);
+    
+    const { User_name, User_email, User_message } = formJSON;
     emailjs
       .send(
-        "service_1vk5sas",
-        "template_pcyospr",
-        { from_name: User_email, to_name: 'Gm-Shuvo', message: User_message, reply_to: User_email},
-        "GHsFsu_ZNZJgtPLES"
+        ServiceId,
+        TemplateId,
+        {
+          from_name: User_name,
+          to_name: "Gm-Shuvo",
+          message: `${User_message} \n\n From: ${User_name} \n Email: ${User_email}`,
+          reply_to: User_email,
+        },
+        UserId
       )
       .then(
         (result) => {
           console.log(result.text);
-          e.target.reset()
-          toast.success("Message sent successfully");
+          e.target.reset();
+          toast.success("Message sent successfully", toastStyle);
         },
         (error) => {
           console.log(error.text);
+          toast.error("Message sent failed", toastStyle);
         }
       );
-
-
-  }
+  };
 
   return (
     <section id="contact" className="mb-16">
@@ -68,8 +86,7 @@ export default function ContractMe() {
                 placeholder:accent-accent
                 transition: all ease-in-out 0.3s
                 duration-300
-                text-primary
-                "
+                text-primar"
                 required
               />
             </div>
