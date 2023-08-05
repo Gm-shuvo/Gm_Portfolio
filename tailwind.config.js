@@ -5,13 +5,15 @@ module.exports = {
     themes: [
       {
         "my-theme": {
+          bgColor: "#1f1f1f",
           primary: "#42f1b7",
-          secondry: "#f6d860",
+          secondary: "#f6d860",
           accent: "#bbb",
           neutral: "#fff",
           "base-100": "#1f1f1f",
         },
       },
+      
     ],
   },
   theme: {
@@ -19,6 +21,14 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
       },
+      // colors: {
+      //   primary: "#42f1b7",
+      //   secondary: "#f6d860",
+      //   accent: "#bbb",
+      //   neutral: "#fff",
+      //   "base-100": "#1f1f1f",
+      // },
+
     },
   },
   plugins: [require("daisyui")],
