@@ -1,40 +1,24 @@
-name: Deploy to GitHub Pages
-
+name: Build and Deploy
 on:
   push:
     branches:
-      - master
-  pull_request:
-    branches:
-      - master
-
+      - main
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          node-version: '18.x'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy Preview
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        run: |
-          npm install -g gh-pages
-          gh-pages -d build
-
-      - name: Deploy Production
-        if: github.event_name == 'pull_request' && github.base_ref == 'refs/heads/master' && github.head_ref == 'refs/heads/gh-pages'
-        run: |
-          npm install -g gh-pages
-          gh-pages -d build -b gh-pages
+          folder: build # The folder the action should deploy.
