@@ -15,7 +15,7 @@ export default function Loader() {
         <lord-icon
           src="https://cdn.lordicon.com/dtgezzsi.json"
           trigger="loop"
-          delay="300"
+          delay="200"
           colors={`primary:${primary},secondary:${secondary}`}
           stroke="50"
           style={{ width: "150px", height: "150px" }}
