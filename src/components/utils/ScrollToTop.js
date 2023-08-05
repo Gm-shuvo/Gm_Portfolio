@@ -12,6 +12,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const checkScrollTop = () => {
+      // console.log("🚀 ~  window.scrollY", window.scrollY)
       if (!showScroll && window.scrollY > 400) {
         setShowScroll(true);
       } else if (showScroll && window.scrollY <= 400) {
@@ -26,7 +27,7 @@ const ScrollToTop = () => {
 
   return (
     <div
-      className="fixed bottom-32 right-10 md:bottom-10 md:right-10 p-2 cursor-pointer rounded-full bg-[#42f1b7e0] shadow-md hover:shadow-lg transition duration-200 ease-in"
+      className="fixed w-12 h-16 text-center bottom-32 right-10 md:bottom-10 md:right-10 p-2 cursor-pointer rounded-full bg-[#42f1b7e0] shadow-md hover:shadow-lg transition duration-200 ease-in"
       onClick={scrollTop}
       style={{ display: showScroll ? 'block' : 'none' }}
     >
@@ -35,7 +36,7 @@ const ScrollToTop = () => {
         trigger="loop"
         colors=""
         state="hover-2"
-        style={{ width: '35px', height: '35px' }}
+        style={{  }}
       ></lord-icon>
     </div>
   );

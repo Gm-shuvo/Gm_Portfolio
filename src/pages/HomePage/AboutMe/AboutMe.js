@@ -33,7 +33,7 @@ export default function About() {
       <div className="">
         <button
           onClick={handleDownload}
-          className="uppercase flex items-center gap-2 md:text-2xl text-lg mt-[40px] font-semibold"
+          className="uppercase flex items-center gap-2 md:text-2xl text-lg mt-[40px] font-semibold hover:text-primary transition-all duration-300 ease-in-out"
           
         >
           Get my CV

@@ -8,24 +8,23 @@ import { projects } from "../../../Data";
 export default function Projects() {
   const [modal, setModal] = useState([]);
   const [showModal, setShowModal] = useState(false);
-
+  const props={
+    icon: "https://cdn.lordicon.com/fpmskzsv.json",
+    title: "Projects",
+  }
   return (
     <section id="projects">
       <SectionTitle
-        props={{
-          icon: "https://cdn.lordicon.com/svbmmyue.json",
-          title: "Projects",
-        }}
-        key={1}
+        props={props}
       />
       <SectionHeader>
         My <span className="text-primary">Projects</span>
       </SectionHeader>
-      <div className="projects">
+      <div className="projects grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects?.slice(0, 4).map((project, index) => {
           // console.log(project);
           return (
-            <>
+            
               <ProjectCard
                 key={index}
                 project={project}
@@ -34,14 +33,14 @@ export default function Projects() {
                 showModal={showModal}
                 modal={modal}
               />
-            </>
+            
           );
         })}
       </div>
       <div className="mt-10 flex justify-end">
         <Link
-          to="/projects"
-          className="flex item-center gap-1 text-xl leading-7 "
+          to="/my_projects"
+          className="flex item-center gap-1 text-xl leading-7 hover:text-primary duration-300 transition-colors ease-in-out"
         >
           All Projects
           <lord-icon

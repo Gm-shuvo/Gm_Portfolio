@@ -2,18 +2,19 @@ import React from 'react'
 import { RxExternalLink } from 'react-icons/rx'
 import { MdOutlineCalendarToday, MdOutlineFeaturedPlayList } from "react-icons/md";
 import { HiCode } from "react-icons/hi";
-import { getRandomColor } from './RandomColor'
+// import { getRandomColor } from './RandomColor'
 import { AiFillGithub } from "react-icons/ai";
 import { CiServer } from "react-icons/ci";
 import {BsCamera} from 'react-icons/bs'
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 // import { color, textColor } from './RandomColor'
+
 // import { color, textColor } from './RandomColor'
 
 export default function ProjectModal({
   data, setModal
 }) {
-  const { name, liveLink, description, features, duration, technologies, iveLink, client, server, images } = data;
+  const { name, liveLink, description, features, duration, technologies, client, server, images } = data;
   // console.log(getRandomColor())
   return (
     <div>

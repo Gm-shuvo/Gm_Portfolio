@@ -1,4 +1,3 @@
-import { set } from "date-fns";
 import React, { useEffect, useState } from "react";
 import {getRandomColor} from '../../components/utils/LoaderColor'
 export default function Loader() {
