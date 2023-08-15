@@ -83,8 +83,6 @@ export const projects = [
       "Stripe",
       "React Router",
       "React Context API",
-      "React Hooks",
-      "React Query",
       "React Lazy Load",
     ],
     client: "https://github.com/Gm-shuvo/Dokan",

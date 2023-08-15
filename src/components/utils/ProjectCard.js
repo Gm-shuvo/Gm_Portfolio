@@ -16,7 +16,7 @@ export default function ProjectCard({ project, setModal, handleModal }) {
           <h1 className="text-base md:text-lg font-bold mb-4">{name}</h1>
           <p className="text-sm md:text-md text-accent ">{description}</p>
           <div className="">
-            <div className="flex flex-wrap gap-2 text-xm text-base-100 mt-3 mb-3">
+            <div className="max-h-[40px] flex flex-wrap gap-2 text-xs text-base-100 mt-3 mb-3">
               {technologies?.map((tech, index) => {
                 // generate a random color
                 const color =

@@ -96,7 +96,7 @@ export default function ProjectModal({ data, setModal }) {
                     <HiCode />
                     Technologies
                   </h2>
-                  <div className="flex flex-wrap gap-2 text-base-100 mt-5">
+                  <div className=" flex flex-wrap gap-2 text-sm px-2 py-1 text-base-100 mt-5">
                     {technologies?.map((tech, index) => {
                       // generate a random color
                       const color =
@@ -114,7 +114,7 @@ export default function ProjectModal({ data, setModal }) {
                       return (
                         <span
                           key={index}
-                          className={`py-2 px-4 text-sm text-white rounded-full`}
+                          className={`py-1 px-2 text-sm text-white rounded-full`}
                           style={{ backgroundColor: color, color: textColor }}
                         >
                           {tech}
