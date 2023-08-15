@@ -46,8 +46,7 @@
   visibility: visible;
 }
 
-
-.project-card {
+ .project-card {
   position: relative;
 
 }
@@ -65,8 +64,7 @@
 .project-card:hover .project-card-content {
   display: flex;
   padding: 4px;
-  justify-content: start;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 20px;
   animation-name: hover-animation-content;
   animation-duration: 0.3s;
@@ -84,7 +82,7 @@
   }
 }
 
-.overlay {
+ .overlay {
   display: none;
 }
 
@@ -111,4 +109,4 @@
   to {
       opacity: .95;
   }
-}
+} 

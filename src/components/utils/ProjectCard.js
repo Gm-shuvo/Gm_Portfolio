@@ -11,7 +11,7 @@ export default function ProjectCard({ project, setModal, handleModal }) {
         alt={name}
         className="w-[100%] h-full rounded-sm object-cover "
       />
-      <div className="project-card-content w-full h-full relative">
+      <div className=" group w-full h-full project-card-content">
         <div className="px-3 p-2 flex flex-col items-start">
           <h1 className="text-base md:text-lg font-bold mb-4">{name}</h1>
           <p className="text-sm md:text-md text-accent ">{description}</p>
