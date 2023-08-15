@@ -1,41 +1,48 @@
-import React from 'react'
-import { RxExternalLink } from 'react-icons/rx'
-import { MdOutlineCalendarToday, MdOutlineFeaturedPlayList } from "react-icons/md";
+import React, { useRef } from "react";
+import { RxExternalLink } from "react-icons/rx";
+import {
+  MdOutlineCalendarToday,
+  MdOutlineFeaturedPlayList,
+} from "react-icons/md";
 import { HiCode } from "react-icons/hi";
 // import { getRandomColor } from './RandomColor'
 import { AiFillGithub } from "react-icons/ai";
 import { CiServer } from "react-icons/ci";
-import {BsCamera} from 'react-icons/bs'
-import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { BsCamera } from "react-icons/bs";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 // import { color, textColor } from './RandomColor'
 
 // import { color, textColor } from './RandomColor'
 
-export default function ProjectModal({
-  data, setModal
-}) {
-  const { name, liveLink, description, features, duration, technologies, client, server, images } = data;
+export default function ProjectModal({ data, setModal }) {
+  console.log("🚀 ~ file: ProjectModal.js:18 ~ ProjectModal ~ data:", data)
+  const {
+    name,
+    liveLink,
+    description,
+    features,
+    duration,
+    technologies,
+    client,
+    server,
+    images,
+  } = data;
   // console.log(getRandomColor())
   return (
-    <div>
-      <input type="checkbox" id="project-modal" className="modal-toggle" />
-      <div className="modal">
-        <div
-          className="modal-box 
-        w-11/12 max-w-5xl relative"
-        >
-          <label
-            htmlFor="project-modal"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
-          >
+    <>
+      <dialog id="my_modal" className="modal">
+        <form method="dialog" className="modal-box w-11/12 max-w-5xl relative">
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
             ✕
-          </label>
+          </button>
           {/* Projects Contents */}
           <div className="mt-5 lg:mt-0">
-            <div className="flex justify-between lg:pr-8 pr-6.
-            ">
+            <div
+              className="flex justify-between lg:pr-8 pr-6.
+            "
+            >
               <h3 className="text-3xl text-bold text-primary">{name}</h3>
-              <a href={" "}>
+              <a href={liveLink}>
                 <button className="btn btn-sm rounded-full px-5 btn-primary text-sm flex items-center gap-1">
                   <RxExternalLink />
                   LiveLink
@@ -90,7 +97,7 @@ export default function ProjectModal({
                     Technologies
                   </h2>
                   <div className="flex flex-wrap gap-2 text-base-100 mt-5">
-                    {technologies?.map((tech, index) => { 
+                    {technologies?.map((tech, index) => {
                       // generate a random color
                       const color =
                         "#" + Math.floor(Math.random() * 16777215).toString(16);
@@ -108,7 +115,7 @@ export default function ProjectModal({
                         <span
                           key={index}
                           className={`py-2 px-4 text-sm text-white rounded-full`}
-                          style={{ backgroundColor: color, color: textColor}}
+                          style={{ backgroundColor: color, color: textColor }}
                         >
                           {tech}
                         </span>
@@ -116,23 +123,25 @@ export default function ProjectModal({
                     })}
                   </div>
                   <div className="mt-5 grid">
-                    <h2 className="flex items-center gap-2 text-xl text-bold
-                    
-                    ">
+                    <h2
+                      className="flex items-center gap-2 text-xl text-bold
+
+                    "
+                    >
                       <AiFillGithub />
                       Source Code
                     </h2>
                     <div className="mt-3">
                       <div className="flex items-start justify-between gap-4">
                         <a
-                          href={" "}
+                          href={client}
                           className="flex items-center gap-2 text-primary"
                         >
                           <AiFillGithub />
                           Client Side
                         </a>
                         <a
-                          href={" "}
+                          href={server}
                           className="flex items-center gap-2 text-red-300"
                         >
                           <CiServer />
@@ -145,7 +154,7 @@ export default function ProjectModal({
               </div>
               {/* Images */}
               <div className="">
-                <h2 className='flex items-center gap-2 text-xl'>
+                <h2 className="flex items-center gap-2 text-xl">
                   <BsCamera />
                   Images
                 </h2>
@@ -153,22 +162,26 @@ export default function ProjectModal({
                   <div className="flex flex-wrap gap-3 mt-3">
                     {images?.map((image, index) => {
                       return (
-                        <PhotoView key={index} src={image} >
-                          <img src={image} alt="" className="w-full h-42 object-contain
+                        <PhotoView key={index} src={image}>
+                          <img
+                            src={image}
+                            alt=""
+                            className="w-full h-42 object-contain
                           hover:scale-105
                           transition-all duration-300
                           cursor-pointer
-                          rounded-md" />
+                          rounded-md"
+                          />
                         </PhotoView>
-                      )
-                     })}
+                      );
+                    })}
                   </div>
-               </PhotoProvider>
+                </PhotoProvider>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </form>
+      </dialog>
+    </>
   );
 }

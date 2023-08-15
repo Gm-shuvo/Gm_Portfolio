@@ -7,38 +7,45 @@ import ProjectCard from '../../components/utils/ProjectCard'
 import ProjectModal from '../../components/utils/ProjectModal'
 
 export default function Projects() {
-  const [modal, setModal] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [modal, setModal] = useState([])
+  console.log("🚀 ~ file: Projects.js:10 ~ Projects ~ modal:", modal)
+  
+  const handleModal = (project) => {
+    window.my_modal.showModal();
+    setModal(project);
+  }
+
+  
   const props={
     icon: "https://cdn.lordicon.com/fpmskzsv.json",
     title: "Projects",
   }
   return (
-    <section >
+    <section id="projects">
       <SectionTitle
         props={props}
       />
       <SectionHeader>
         My <span className="text-primary">Projects</span>
       </SectionHeader>
-      <div className="projects grid grid-cols-1 md:grid-cols-2 gap-4">
-        {projects?.slice(0, 4).map((project, index) => {
+      <div className="projects flex flex-wrap gap-8">
+        {projects?.map((project, index) => {
           // console.log(project);
           return (
             
               <ProjectCard
                 key={index}
                 project={project}
-                setModal={setModal}
-                setShowModal={setShowModal}
-                showModal={showModal}
-                modal={modal}
+                handleModal={handleModal}
+                
               />
             
           );
         })}
       </div>
+      
       <ProjectModal data={modal} setModal={setModal} />
+
     </section>
-  )
+  );
 }

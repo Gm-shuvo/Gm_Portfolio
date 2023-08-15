@@ -25,7 +25,7 @@ export default function MobileNav() {
     },
   ];
   return (
-    <div className="flex items-center justify-around gap-8 border-[1px] px-9 py-2 rounded-full border-[#b6b0b0] bg-slate-400/10">
+    <div className="flex items-center justify-around gap-8 border-[1px] px-9 py-2 rounded-full border-[#b6b0b0] bg-slate-700">
       {mobNav.map((item, index) => {
         return (
           <Link
