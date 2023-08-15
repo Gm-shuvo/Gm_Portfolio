@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/styles/project-card.css";
+// import "../../assets/styles/project-card.css";
 
 export default function ProjectCard({ project, setModal, handleModal }) {
   const { name, img, liveLink, description, technologies } = project;
