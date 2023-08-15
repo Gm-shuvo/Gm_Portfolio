@@ -66,7 +66,7 @@ export default function ContractMe() {
         Let's work <span className="text-primary">Together</span>
       </SectionHeader>
       <div className="">
-        <form ref={formData} onSubmit={handleForm} classNam="">
+        <form ref={formData} onSubmit={handleForm} className="">
           <div className="flex flex-col md:flex-row lg:flex-row gap-10">
             <div className=" w-10/12 md:w-1/2 grid gap-2">
               <label htmlFor="" className="text-sm text-accent text-bold">
