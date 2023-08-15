@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthProvider';
+// import { AuthContext } from '../../context/AuthProvider';
 import { scrollToSection } from '../utils/ScrollToSection';
 import { handleDownload } from '../utils/ResumeDownload';
 
