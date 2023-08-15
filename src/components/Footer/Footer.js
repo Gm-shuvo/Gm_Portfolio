@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
   return (
     <section id="footer">
-      <div className="mt-10 ">
+      <div className="mt-[15vh] ">
         <div className="absolute w-full right-0 left-0 flex h-4 items-center justify-center text-sm">
           <p>
             Allrights reserved to &copy;Gm-shuvo

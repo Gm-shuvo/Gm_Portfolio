@@ -21,10 +21,10 @@ export default function Main() {
           <Outlet />
           <Footer />
         </div>
-        <div className="lg:max-w-[60px] lg:block md:block hidden">
+        <div className="lg:max-w-[60px] lg:block md:block hidden z-9999">
           <Navbar />
         </div>
-        <div className="md:hidden block fixed bottom-3 left-10 right-10">
+        <div className="md:hidden block fixed bottom-3 left-3 right-3  z-9999">
           <MobileNav />
         </div>
         <ScrollToTop />
