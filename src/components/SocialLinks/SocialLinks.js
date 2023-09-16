@@ -5,19 +5,19 @@ import SocialIcon from '../utils/SocialIcon'
 const slinks = [
   {
     icon: <GrFacebook/>,
-    link: 'https://www.facebook.com/gmshuvo',
+    link: 'https://www.facebook.com/gmshuvo.me/',
   },
   {
     icon: <GrGithub />,
-    link: 'https://github.com/gmshuvo',
+    link: 'https://github.com/Gm-shuvo',
   },
   {
     icon: <GrLinkedin />,
-    link: 'https://www.linkedin.com/in/gmshuvo',
+    link: 'www.linkedin.com/in/gm-shuvo',
   },
   {
     icon: <FaWhatsapp />,
-    link: 'https://wa.me/8801711-00000',
+    link: 'https://wa.me/01736794662',
   }
 
 ]
