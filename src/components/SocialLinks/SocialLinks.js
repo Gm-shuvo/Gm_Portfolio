@@ -13,7 +13,7 @@ const slinks = [
   },
   {
     icon: <GrLinkedin />,
-    link: 'www.linkedin.com/in/gm-shuvo',
+    link: 'https://www.linkedin.com/in/gm-shuvo/',
   },
   {
     icon: <FaWhatsapp />,
