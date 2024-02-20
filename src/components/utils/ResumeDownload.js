@@ -1,6 +1,7 @@
+import { CV_URL } from "../../constents";
+
 export const handleDownload = async () => {
-  const cvUrl =
-    "https://res.cloudinary.com/gmshuvo/image/upload/v1691131846/Gm_Shuvo_Resume_tsmthm.pdf";
+  const cvUrl = CV_URL;
   const Name = "Gm_Shuvo";
   try {
     const response = await fetch(cvUrl);
