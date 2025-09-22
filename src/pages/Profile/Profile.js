@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../../assets/images/gmshuvo.jpeg";
+import profile from "../../assets/images/gmshuvo.jpg";
 
 import SocialLinks from "../../components/SocialLinks/SocialLinks";
 
