@@ -15,8 +15,7 @@ export default function Profile() {
         <div className="flex flex-col items-center text-center gap-4 mt-3">
           <div className=" text-4xl  text-[#42f1b7]">Gm Shuvo</div>
           <div className="text-white text-md leading-[20px]">
-            Full-Stack
-            <br className="leading-[14px]" /> Developer
+            Full-Stack Developer
           </div>
 
           <div className="flex flex-col items-center">
